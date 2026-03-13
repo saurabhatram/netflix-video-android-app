@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetflixPlayer</string>
+    <string name="all_videos">All Videos</string>
+    <string name="my_list">My List</string>
+    <string name="continue_watching">Continue Watching</string>
+    <string name="trending">Trending Now</string>
+    <string name="for_you">Top Picks For You</string>
+    <string name="skip_forward">Skip Forward 10s</string>
+    <string name="skip_backward">Skip Backward 10s</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="fullscreen">Fullscreen</string>
+    <string name="brightness">Brightness</string>
+    <string name="volume">Volume</string>
+</resources>
