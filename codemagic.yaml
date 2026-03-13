@@ -28,7 +28,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - your@email.com
+          - saurabhatram99@email.com
         notify:
           success: true
           failure: true
