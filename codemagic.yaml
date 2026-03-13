@@ -1,0 +1,34 @@
+workflows:
+  android-debug-build:
+    name: NetflixPlayer Debug APK
+    max_build_duration: 30
+    environment:
+      java: 17
+    scripts:
+      - name: Set gradlew permissions
+        script: chmod +x gradlew
+
+      - name: Create local.properties
+        script: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
+      - name: Accept Android licenses
+        script: yes | sdkmanager --licenses >> /dev/null 2>&1 || true
+
+      - name: Build debug APK
+        script: |
+          ./gradlew assembleDebug \
+            --stacktrace \
+            --no-daemon \
+            -Dorg.gradle.jvmargs="-Xmx2048m"
+
+    artifacts:
+      - app/build/outputs/apk/debug/app-debug.apk
+      - app/build/outputs/**/*.apk
+
+    publishing:
+      email:
+        recipients:
+          - your@email.com
+        notify:
+          success: true
+          failure: true
